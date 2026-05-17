@@ -18,6 +18,14 @@ function App() {
 
   return (
     <Routes>
+
+      {/* Default Route */}
+
+      <Route
+        path="/"
+        element={<Navigate to="/login" />}
+      />
+
       <Route
         path="/login"
         element={<Login />}
@@ -51,6 +59,14 @@ function App() {
           </ProtectedRoute>
         }
       />
+
+      {/* Catch-all Route */}
+
+      <Route
+        path="*"
+        element={<Navigate to="/login" />}
+      />
+
     </Routes>
   );
 }
